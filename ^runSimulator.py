@@ -309,7 +309,7 @@ def eventMove(event):
         scramble()
 
     if event.key in moveKeys.keys():
-        shift = 2*(pygame.key.get_mods() & pygame.KMOD_SHIFT) - 1
+        shift = 2*bool(pygame.key.get_mods() & pygame.KMOD_SHIFT) - 1
         if undo > 0:
             moves = moves[:-undo]
             undo = 0
